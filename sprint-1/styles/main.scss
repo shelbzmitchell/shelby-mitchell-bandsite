@@ -1,0 +1,26 @@
+@import "./partials/breakpoints";
+@import "./partials/colors";
+@import "./partials/fonts";
+
+
+html,
+body {
+  margin: 0;
+  font-family: 'avenir-regular', sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@import "./partials/header";
+
+
+
