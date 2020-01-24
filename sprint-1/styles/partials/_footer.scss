@@ -1,0 +1,46 @@
+.footer {
+    background-color: $black;
+    padding: 0 $margin-small;
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    height: 700px;
+    justify-content: space-evenly;
+
+&__container-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20%;
+}
+
+&__title {
+    font-size: 36px; /* used bigger font size than specified on typography sheet, to match mock-up */
+    line-height: 44px;
+}
+
+&__icon-container {
+    display: flex;
+    width: 46%;
+    justify-content: space-between;
+}
+&__logo {
+    display: none;
+}
+
+&__contact-name {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+
+&__contact-info {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 16px 0;
+}
+}
+
+
+
