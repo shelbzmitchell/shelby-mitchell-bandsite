@@ -1,0 +1,137 @@
+.about {
+    margin: 0 $margin-small;
+    display: flex;
+    flex-direction: column;
+    color: $black;
+
+    &__title {
+        margin-top: 32px;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    &__image-container {
+        margin: 24px 0;
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__bio {
+        margin: 40px 0;
+    }
+
+    &__quote {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 32px;
+    }
+
+    &__author {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    &__names {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+
+    &__content {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    &__content--1 {
+        margin: 24px 0;
+    }
+}
+
+@include medium {
+    .about {
+        margin: 0 $margin-medium;
+    
+    &__title {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    &__image-container {
+        min-height: 362px; /*didn't set height so would scale nicely */
+        width: 100%;
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__quote,
+    &__names {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    &__author {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__content-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        width: 48%; /* 348px -- not precise but wanted to use percentage here */
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    &__content--1 {
+        margin: 0;
+    }
+    }
+}
+
+@include huge {
+    .about {
+        margin: 0 $margin-huge;
+
+    &__desktop-margin {
+        width: 81%;
+        align-self: center;
+    }
+    
+    &__title {
+        padding-top: 48px;
+        align-self: flex-start;
+    }
+
+    &__image-container {
+        min-height: 450px; /* didn't set height so it would scale better */
+        margin: 48px 0;
+    }
+
+    &__image {
+        width: 100%;
+    }
+    
+    &__quote {
+        margin-bottom: 40px;
+    }
+    
+    &__bio {
+        margin: 56px 0 48px 0;
+    }
+
+    &__names {
+        margin-bottom: 32px;
+    }
+    }
+}
+
