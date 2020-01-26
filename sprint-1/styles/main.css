@@ -476,4 +476,112 @@ body {
   line-height: 18px;
   margin: 16px 0;
 }
+
+.footer__all-rights-reserved {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 0 24px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: 400px;
+  }
+  .footer__container-1 {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 30%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer__title {
+    margin-right: 48px;
+  }
+  .footer__icon-container {
+    width: 124px;
+  }
+  .footer__logo {
+    display: inline-block;
+    margin-left: auto;
+  }
+  .footer__container-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .footer__contact-container {
+    width: 250px;
+  }
+  .footer__contact-name {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+  .footer__contact-info {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 16px 0;
+  }
+  .footer__copyright {
+    margin-right: auto;
+  }
+  .footer__all-rights-reserved {
+    display: inline;
+  }
+  /* placeholder */
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0 180px;
+  }
+  .footer__container-1 {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 48px 0 56px 0;
+  }
+  .footer__logo {
+    width: 120px;
+    height: 24px;
+  }
+  .footer__logo-image {
+    width: 100%;
+    height: 100%;
+  }
+  .footer__container-2 {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+  .footer__contact-container {
+    margin-right: 25px;
+  }
+  .footer__contact-name {
+    margin-bottom: 24px;
+  }
+  .footer__copyright {
+    margin: 40px 0;
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=main.css.map */
