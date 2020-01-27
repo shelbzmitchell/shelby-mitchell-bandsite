@@ -1,14 +1,14 @@
 .hero {
 
 &__image {
-    background: linear-gradient(
+    background: linear-gradient( /*background overlay as specified in spec sheet */
         rgba(50, 50, 50, 0.5), 
         rgba(50, 50, 50, 0.5)
     ),
     url("../assets/images/hero-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 183px;
+    height: 11.437rem; /* 183px */
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -18,8 +18,7 @@
     &__title {
     color: $white;
     margin-left: $margin-small;
-    font-size: 24px;
-    line-height: 32px;
+    @include mobile-header;
 }
 }
 
@@ -27,12 +26,12 @@
     .hero {
 
 &__image {
-    height: 400px;
+    height: 25rem; /* 400px */
 }
     &__title {
     margin-left: $margin-medium;
-    font-size: 60px;
-    line-height: 68px;
+    @include dt-hero-header;
+    padding: 0.5rem 0; /* 8px 0*/
 }
 }
 }
@@ -41,7 +40,7 @@
     .hero {
 
 &__image {
-    height: 670px;
+    height: 41.875rem; /* 670px */
 }
     &__title {
     margin-left: $margin-huge;
