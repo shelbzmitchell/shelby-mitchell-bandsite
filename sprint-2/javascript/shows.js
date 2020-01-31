@@ -39,31 +39,42 @@ function createShowSection(infoContainer, showInfo) {
     showsInfo.classList.add("shows__info");
     infoContainer.appendChild(showsInfo);
     let showEl = document.createElement("div");
+    let showEl2 = document.createElement("div");
+    let showEl3 = document.createElement("div");
     for (let key in show) {
       //goes through each object key within each item
 
-      //   let info = document.createElement("p");
-      //   info.classList.add("shows__item");
-      //   info.innerHTML = `<p>${key} ${show[key]}<p>`;
-      //   showsInfo.appendChild(info);
-
-      //   console.log(key);
       if (key === "date") {
-        // console.log("this ran");
         console.log(show["date"]);
         let dateEl = document.createElement("p");
-        dateEl.innerText = show["date"];
+        dateEl.innerText = `${key} ${show["date"]}`;
+        dateEl.className = "shows__date";
         showEl.appendChild(dateEl);
       }
 
       if (key === "venue") {
-        // console.log("this ran");
         console.log(show["venue"]);
+        let venueEl = document.createElement("p");
+        venueEl.innerText = `${key} ${show["venue"]}`;
+        venueEl.className = "shows__venue";
+        showEl2.appendChild(venueEl);
       }
-      showsInfo.appendChild(showEl);
-      //console.log(key);
-      //console.log(show["venue"]);
+
+      if (key === "location") {
+        console.log(show["location"]);
+        let locationEl = document.createElement("p");
+        locationEl.innerText = `${key} ${show["location"]}`;
+        locationEl.className = "shows__location";
+        showEl3.appendChild(locationEl);
+      }
     }
+
+    showsInfo.appendChild(showEl);
+    showEl.classList.add("shows__el-container");
+    showsInfo.appendChild(showEl2);
+    showEl2.classList.add("shows__el-container");
+    showsInfo.appendChild(showEl3);
+    showEl3.classList.add("shows__el-container");
   }
 }
 
