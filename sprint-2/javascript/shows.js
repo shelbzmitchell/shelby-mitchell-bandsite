@@ -41,31 +41,45 @@ function createShowSection(infoContainer, showInfo) {
     let showEl = document.createElement("div");
     let showEl2 = document.createElement("div");
     let showEl3 = document.createElement("div");
+    let button = document.createElement("button");
+
     for (let key in show) {
       //goes through each object key within each item
 
       if (key === "date") {
         console.log(show["date"]);
         let dateEl = document.createElement("p");
-        dateEl.innerText = `${key} ${show["date"]}`;
+        let dateEl2 = document.createElement("p");
+        dateEl.innerText = `${key}`;
+        dateEl2.innerText = `${show["date"]}`;
         dateEl.className = "shows__date";
+        dateEl2.className = "shows__date-content";
         showEl.appendChild(dateEl);
+        showEl.appendChild(dateEl2);
       }
 
       if (key === "venue") {
         console.log(show["venue"]);
         let venueEl = document.createElement("p");
-        venueEl.innerText = `${key} ${show["venue"]}`;
+        let venueEl2 = document.createElement("p");
+        venueEl.innerText = `${key}`;
+        venueEl2.innerText = `${show["venue"]}`;
         venueEl.className = "shows__venue";
+        venueEl2.className = "shows__venue-content";
         showEl2.appendChild(venueEl);
+        showEl2.appendChild(venueEl2);
       }
 
       if (key === "location") {
         console.log(show["location"]);
         let locationEl = document.createElement("p");
-        locationEl.innerText = `${key} ${show["location"]}`;
+        let locationEl2 = document.createElement("p");
+        locationEl.innerText = `${key}`;
+        locationEl2.innerText = `${show["location"]}`;
         locationEl.className = "shows__location";
+        locationEl2.className = "shows__location-content";
         showEl3.appendChild(locationEl);
+        showEl3.appendChild(locationEl2);
       }
     }
 
@@ -75,6 +89,9 @@ function createShowSection(infoContainer, showInfo) {
     showEl2.classList.add("shows__el-container");
     showsInfo.appendChild(showEl3);
     showEl3.classList.add("shows__el-container");
+    button.innerText = `BUY TICKETS`;
+    button.className = "shows__button";
+    showEl3.appendChild(button);
   }
 }
 

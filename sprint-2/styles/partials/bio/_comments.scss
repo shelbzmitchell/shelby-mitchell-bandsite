@@ -1,0 +1,6 @@
+.comments {
+  &__header {
+    @include mobile-header;
+    margin: 32px 0 40px 0;
+  }
+}

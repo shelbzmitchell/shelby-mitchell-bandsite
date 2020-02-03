@@ -3,11 +3,10 @@
 @import "./partials/fonts";
 @import "./partials/margins";
 
-
 html,
 body {
   margin: 0;
-  font-family: 'avenir-next', sans-serif;
+  font-family: "avenir-next", sans-serif;
   height: 100vh;
   box-sizing: border-box;
   font-size: 16px;
@@ -23,10 +22,8 @@ body {
 }
 
 @import "./partials/header";
-@import "./partials/hero";
+@import "./partials/bio/hero";
 @import "./partials/about";
-@import "./partials/photo-gallery";
+@import "./partials/bio/photo-gallery";
+@import "./partials/bio/comments";
 @import "./partials/footer";
-
-
-

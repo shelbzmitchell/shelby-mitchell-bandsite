@@ -1,0 +1,71 @@
+.shows {
+  margin: 0 $margin-small;
+  color: $black;
+
+  &__title {
+    @include mobile-header;
+    color: $black;
+    margin: 32px 0 40px 0;
+  }
+
+  &__date,
+  &__venue,
+  &__location {
+    @include labels;
+    text-transform: uppercase;
+    color: $silver;
+    margin-top: 1.5rem;
+  }
+  &__date-content {
+    @include mobile-subheader;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  &__venue-content,
+  &__location-content {
+    @include mobile-paragraph-lists;
+    margin: 1rem 0 1.5rem 0;
+  }
+  &__button {
+    background-color: $black;
+    color: $white;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+  &__info {
+    border-bottom: 1px solid $silver;
+  }
+  &__info-container {
+    margin-bottom: 3rem;
+  }
+}
+
+@include medium {
+  .shows {
+    margin: 0 $margin-medium;
+    &__info-container {
+      display: flex;
+    }
+    &__info {
+      display: flex;
+    }
+
+    &__el-container {
+      display: flex;
+      width: 25%;
+    }
+    &__date-content,
+    &__venue-content,
+    &__location-content {
+      width: 100%;
+    }
+    &__date,
+    &__venue,
+    &__location {
+      width: 100%;
+    }
+  }
+}
