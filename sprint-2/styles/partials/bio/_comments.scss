@@ -1,6 +1,74 @@
 .comments {
+  margin: 0 $margin-small;
+  display: flex;
+  flex-wrap: wrap;
+  color: $black;
+
   &__header {
     @include mobile-header;
     margin: 32px 0 40px 0;
+    width: 100%;
+  }
+
+  &__left {
+    width: 20%;
+  }
+
+  &__right {
+    width: 80%;
+  }
+
+  &__form-label {
+    @include labels;
+    color: $silver;
+    text-transform: uppercase;
+  }
+
+  &__new-name {
+    height: 3rem;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px $mercury solid;
+    background-color: $alabaster;
+  }
+
+  &__new-comment {
+    height: 6rem;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px $mercury solid;
+    background-color: $alabaster;
+  }
+
+  &__submit {
+    width: 100%;
+    background-color: $black;
+    border: none;
+    color: $white;
+    border-radius: 4px;
+    text-transform: uppercase;
+    height: 3rem;
+    @include mobile-subheader;
+    margin: 1rem 0 2rem 0;
+  }
+
+  &__element-container {
+    display: inline-block;
+  }
+
+  &__name {
+    @include mobile-subheader;
+    display: inline;
+  }
+
+  &__date {
+    @include mobile-paragraph-lists;
+    color: $silver;
+    display: inline;
+    margin-left: 36px;
+  }
+
+  &__comment {
+    @include mobile-paragraph-lists;
   }
 }

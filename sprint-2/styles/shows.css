@@ -512,6 +512,7 @@ body {
   /* 12px */
   line-height: 1.25rem;
   /* 20px */
+  font-family: "avenir-next-demi";
   text-transform: uppercase;
   color: #afafaf;
   margin-top: 1.5rem;
@@ -584,6 +585,7 @@ body {
     /* 12px */
     line-height: 1.25rem;
     /* 20px */
+    font-family: "avenir-next-demi";
     color: #afafaf;
   }
   .shows__info-container {

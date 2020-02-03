@@ -99,16 +99,18 @@
         </section>
         <section class="comments">
             <h1 class="comments__header">Join the Conversation</h1>
-            <div class="comments__left"></div>
+            <div class="comments__left">
+                <div class="comments__circle"></div>
+            </div>
             <div class="comments__right">
                 <form class="comments__form" action="">
-<label>
-    Name<input class="comments__new-name" type="text" name="name">
+<label class="comments__form-name">
+    <p class="comments__form-label">Name</p><input class="comments__new-name" type="text" name="name">
 </label>
-<label>
-    Comment<input class="comments__new-comment" type="textarea">
+<label class="comments__form-comment">
+    <p class="comments__form-label">Comment</p><input class="comments__new-comment" type="textarea">
 </label>
-<label>
+<label class="comments__form-submit">
     <input class="comments__submit" type = "submit" value ="comment">
 </label>
                 </form>

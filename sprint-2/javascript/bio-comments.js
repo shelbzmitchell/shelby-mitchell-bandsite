@@ -25,23 +25,9 @@ let infoContainer = document.querySelector(".comments__displayed"); //selecting 
 function displayComment(commentChunk) {
   //displaycomment function, argument is comment chunk (object in array)
 
-  // for (i = 0; i < commentsArr.length; i++) {
-  //   let commentsCont = document.createElement("div");
-  //   infoContainer.appendChild(commentsCont);
-  //   commentsCont.className = "comments__container";
-
-  //   let commentsTop = document.createElement("div");
-  //   commentsCont.appendChild(commentsTop);
-  //   commentsTop.className = "comments__top";
-
-  //   let commentsBottom = document.createElement("div");
-  //   commentsCont.appendChild(commentsBottom);
-  //   commentsBottom.className = "comments__bottom";
-  // }
-
   for (let key in commentChunk) {
     let commentsEl = document.createElement("div"); //create div called commentsEl
-    commentsEl.classList.add("element__container");
+    commentsEl.classList.add("comments__element-container");
     infoContainer.appendChild(commentsEl); //append div for each comment chunk to the parent div infoContainer
 
     if (key === "name") {
@@ -68,6 +54,20 @@ function displayComment(commentChunk) {
   }
 }
 
+// for (i = 0; i < commentsArr.length; i++) {
+//   let commentsCont = document.createElement("div");
+//   infoContainer.appendChild(commentsCont);
+//   commentsCont.className = "comments__container";
+
+//   let commentsTop = document.createElement("div");
+//   commentsCont.appendChild(commentsTop);
+//   commentsTop.className = "comments__top";
+
+//   let commentsBottom = document.createElement("div");
+//   commentsCont.appendChild(commentsBottom);
+//   commentsBottom.className = "comments__bottom";
+// }
+
 for (let object of commentsArr) displayComment(object); //invoke the displayComment function for each object in array// shows comments before user click
 
 const form = document.querySelector(".comments__form"); //select form, assign variable
@@ -81,8 +81,8 @@ form.addEventListener("submit", submitEvent => {
   let newComment = {
     //create object with user info
     name: userName,
-    comment: userComment,
-    date: new Date()
+    date: new Date(),
+    comment: userComment
   };
   commentsArr.unshift(newComment); //push object with user info into beginning of array
   document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
