@@ -24,18 +24,21 @@ let infoContainer = document.querySelector(".comments__displayed"); //selecting 
 
 function displayComment(commentChunk) {
   //displaycomment function, argument is comment chunk (object in array)
+  let commentsObj = document.createElement("div");
+  commentsObj.classList.add("comments__object");
+  infoContainer.appendChild(commentsObj);
 
   let commentsTop = document.createElement("div");
   commentsTop.classList.add("comments__top");
-  infoContainer.appendChild(commentsTop);
+  commentsObj.appendChild(commentsTop);
 
   let commentsBottom = document.createElement("div");
   commentsBottom.classList.add("comments__bottom");
-  infoContainer.appendChild(commentsBottom);
+  commentsObj.appendChild(commentsBottom);
 
   let commentsLeft = document.createElement("div");
   commentsLeft.classList.add("comments__left");
-  commentsTop.appendChild(commentsLeft);
+  commentsObj.appendChild(commentsLeft);
 
   for (let key in commentChunk) {
     // let commentsEl = document.createElement("div"); //create div called commentsEl
