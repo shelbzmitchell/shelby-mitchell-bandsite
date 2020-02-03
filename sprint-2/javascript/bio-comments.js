@@ -25,48 +25,48 @@ let infoContainer = document.querySelector(".comments__displayed"); //selecting 
 function displayComment(commentChunk) {
   //displaycomment function, argument is comment chunk (object in array)
 
+  let commentsTop = document.createElement("div");
+  commentsTop.classList.add("comments__top");
+  infoContainer.appendChild(commentsTop);
+
+  let commentsBottom = document.createElement("div");
+  commentsBottom.classList.add("comments__bottom");
+  infoContainer.appendChild(commentsBottom);
+
+  let commentsLeft = document.createElement("div");
+  commentsLeft.classList.add("comments__left");
+  commentsTop.appendChild(commentsLeft);
+
   for (let key in commentChunk) {
-    let commentsEl = document.createElement("div"); //create div called commentsEl
-    commentsEl.classList.add("comments__element-container");
-    infoContainer.appendChild(commentsEl); //append div for each comment chunk to the parent div infoContainer
+    // let commentsEl = document.createElement("div"); //create div called commentsEl
+    // commentsEl.classList.add("comments__element-container");
+    // infoContainer.appendChild(commentsEl); //append div for each comment chunk to the parent div infoContainer
 
     if (key === "name") {
       console.log(commentChunk["name"]);
       let nameEl = document.createElement("p"); //create p tag variable nameEl
       nameEl.innerText = `${commentChunk["name"]}`; //nameEl will show the info if key matches what's declared
       nameEl.className = "comments__name";
-      commentsEl.appendChild(nameEl); //append to specified div
+      commentsTop.appendChild(nameEl); //append to specified div
+      // console.log(commentsTop);
     }
     if (key === "date") {
       console.log(commentChunk["date"]);
       let dateEl = document.createElement("p");
       dateEl.innerText = `${commentChunk["date"]}`;
       dateEl.className = "comments__date";
-      commentsEl.appendChild(dateEl);
+      commentsTop.appendChild(dateEl);
+      console.log(commentsTop);
     }
     if (key === "comment") {
       console.log(commentChunk["comment"]);
       let commentEl = document.createElement("p");
       commentEl.innerText = `${commentChunk["comment"]}`;
       commentEl.className = "comments__comment";
-      commentsEl.appendChild(commentEl);
+      commentsBottom.appendChild(commentEl);
     }
   }
 }
-
-// for (i = 0; i < commentsArr.length; i++) {
-//   let commentsCont = document.createElement("div");
-//   infoContainer.appendChild(commentsCont);
-//   commentsCont.className = "comments__container";
-
-//   let commentsTop = document.createElement("div");
-//   commentsCont.appendChild(commentsTop);
-//   commentsTop.className = "comments__top";
-
-//   let commentsBottom = document.createElement("div");
-//   commentsCont.appendChild(commentsBottom);
-//   commentsBottom.className = "comments__bottom";
-// }
 
 for (let object of commentsArr) displayComment(object); //invoke the displayComment function for each object in array// shows comments before user click
 
@@ -78,12 +78,20 @@ form.addEventListener("submit", submitEvent => {
 
   let userName = document.querySelector(".comments__new-name").value; //assign user input to value
   let userComment = document.querySelector(".comments__new-comment").value;
+  let currentDate = new Date();
+  let formattedDate =
+    currentDate.getFullYear() +
+    "-" +
+    (currentDate.getMonth() + 1) +
+    "-" +
+    currentDate.getDate();
   let newComment = {
     //create object with user info
     name: userName,
-    date: new Date(),
+    date: formattedDate,
     comment: userComment
   };
+
   commentsArr.unshift(newComment); //push object with user info into beginning of array
   document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
   for (let object of commentsArr) displayComment(object); //invoke displaycomment function with new values pushed in
