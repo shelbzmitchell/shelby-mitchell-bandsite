@@ -2,6 +2,10 @@
   margin: 0 $margin-small;
   color: $black;
 
+  &__labels {
+    display: none;
+  }
+
   &__title {
     @include mobile-header;
     color: $black;
@@ -36,7 +40,7 @@
     margin-bottom: 1rem;
   }
   &__info {
-    border-bottom: 1px solid $silver;
+    border-bottom: 2px solid $mercury;
   }
   &__info-container {
     margin-bottom: 3rem;
@@ -46,26 +50,84 @@
 @include medium {
   .shows {
     margin: 0 $margin-medium;
-    &__info-container {
-      display: flex;
+
+    &__title {
+      @include dt-header-h1;
     }
-    &__info {
+
+    &__labels {
+      display: flex;
+      width: 75%;
+      justify-content: space-evenly;
+      margin-bottom: 1rem;
+    }
+
+    &__label-container {
+      width: 33.33%;
       display: flex;
     }
 
-    &__el-container {
+    &__label {
+      @include labels;
+      color: $silver;
+    }
+
+    &__info-container {
       display: flex;
+      flex-direction: column;
+    }
+    &__info {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    &__el-container {
       width: 25%;
     }
+
     &__date-content,
     &__venue-content,
     &__location-content {
       width: 100%;
+      margin: 0;
+      @include dt-paragraph;
     }
     &__date,
     &__venue,
     &__location {
-      width: 100%;
+      display: none;
+    }
+    &__button {
+      width: 25%;
+      margin: 0;
+    }
+  }
+}
+
+@include huge {
+  .shows {
+    margin: 0 $margin-huge;
+    display: flex;
+
+    &__title {
+      height: 100%;
+      width: 25%;
+      margin-top: 3rem;
+    }
+
+    &__labels {
+      margin-top: 3rem;
+    }
+
+    &__right {
+      width: 75%;
+    }
+
+    &__button {
+      width: 10rem;
+      height: 3rem;
+      margin-left: auto;
     }
   }
 }

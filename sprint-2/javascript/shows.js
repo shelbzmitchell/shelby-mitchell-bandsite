@@ -21,6 +21,11 @@ let shows = [
     location: "San Francisco, CA"
   },
   {
+    date: "Fri Sep 05 2019",
+    venue: "Moscow Center",
+    location: "San Francisco, CA"
+  },
+  {
     date: "Wed Aug 11 2019",
     venue: "Pres Club",
     location: "San Francisco, CA"
@@ -91,7 +96,7 @@ function createShowSection(infoContainer, showInfo) {
     showEl3.classList.add("shows__el-container");
     button.innerText = `BUY TICKETS`;
     button.className = "shows__button";
-    showEl3.appendChild(button);
+    showsInfo.appendChild(button);
   }
 }
 

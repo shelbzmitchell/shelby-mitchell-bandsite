@@ -493,6 +493,10 @@ body {
   color: #323232;
 }
 
+.shows__labels {
+  display: none;
+}
+
 .shows__title {
   font-size: 1.5rem;
   /* 24px */
@@ -541,7 +545,7 @@ body {
 }
 
 .shows__info {
-  border-bottom: 1px solid #afafaf;
+  border-bottom: 2px solid #E1E1E1;
 }
 
 .shows__info-container {
@@ -552,28 +556,97 @@ body {
   .shows {
     margin: 0 24px;
   }
+  .shows__title {
+    font-size: 2.25rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 44px */
+    font-family: "avenir-next-bold";
+  }
+  .shows__labels {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 75%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-bottom: 1rem;
+  }
+  .shows__label-container {
+    width: 33.33%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .shows__label {
+    font-size: 0.75rem;
+    /* 12px */
+    line-height: 1.25rem;
+    /* 20px */
+    color: #afafaf;
+  }
   .shows__info-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .shows__info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1rem 0;
   }
   .shows__el-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     width: 25%;
   }
   .shows__date-content, .shows__venue-content, .shows__location-content {
     width: 100%;
+    margin: 0;
+    font-size: 0.875rem;
+    /* 14px */
+    line-height: 1.375rem;
+    /* 22px */
   }
   .shows__date, .shows__venue, .shows__location {
-    width: 100%;
+    display: none;
+  }
+  .shows__button {
+    width: 25%;
+    margin: 0;
   }
   /* placeholder */
+}
+
+@media only screen and (min-width: 1440px) {
+  .shows {
+    margin: 0 180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .shows__title {
+    height: 100%;
+    width: 25%;
+    margin-top: 3rem;
+  }
+  .shows__labels {
+    margin-top: 3rem;
+  }
+  .shows__right {
+    width: 75%;
+  }
+  .shows__button {
+    width: 10rem;
+    height: 3rem;
+    margin-left: auto;
+  }
 }
 /*# sourceMappingURL=shows.css.map */
