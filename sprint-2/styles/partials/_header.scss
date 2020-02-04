@@ -6,6 +6,12 @@
   background-color: $black;
   color: $white;
 
+  a:visited,
+  a:link {
+    color: $white;
+    text-decoration: none;
+  }
+
   &__logo-container {
     /* used PNG file because all other options were different font  */
     display: flex;

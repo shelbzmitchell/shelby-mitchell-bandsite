@@ -52,6 +52,12 @@ body {
   color: #ffffff;
 }
 
+.header a:visited,
+.header a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .header__logo-container {
   /* used PNG file because all other options were different font  */
   display: -webkit-box;

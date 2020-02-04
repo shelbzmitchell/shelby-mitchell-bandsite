@@ -23,46 +23,41 @@ let commentsArr = [
 let infoContainer = document.querySelector(".comments__displayed"); //selecting div in html and assign variable named infoContainer
 
 function displayComment(commentChunk) {
-  //displaycomment function, argument is comment chunk (object in array)
+  //displaycomment function, param is comment chunk (object in array)
   let commentsObj = document.createElement("div");
   commentsObj.classList.add("comments__object");
   infoContainer.appendChild(commentsObj);
 
-  let commentsTop = document.createElement("div");
-  commentsTop.classList.add("comments__top");
-  commentsObj.appendChild(commentsTop);
-
-  let commentsBottom = document.createElement("div");
-  commentsBottom.classList.add("comments__bottom");
-  commentsObj.appendChild(commentsBottom);
-
-  let commentsLeft = document.createElement("div");
+  let commentsLeft = document.createElement("div"); //div for circle on left
   commentsLeft.classList.add("comments__left");
   commentsObj.appendChild(commentsLeft);
 
-  for (let key in commentChunk) {
-    // let commentsEl = document.createElement("div"); //create div called commentsEl
-    // commentsEl.classList.add("comments__element-container");
-    // infoContainer.appendChild(commentsEl); //append div for each comment chunk to the parent div infoContainer
+  let commentsLeftCircle = document.createElement("div"); //circle on left
+  commentsLeftCircle.classList.add("comments__left-circle");
+  commentsLeft.appendChild(commentsLeftCircle);
 
+  let commentsTop = document.createElement("div"); //div so date and name can be at top of object w/flexbox
+  commentsTop.classList.add("comments__top");
+  commentsObj.appendChild(commentsTop);
+
+  let commentsBottom = document.createElement("div"); //div for comment at bottom of object
+  commentsBottom.classList.add("comments__bottom");
+  commentsObj.appendChild(commentsBottom);
+
+  for (let key in commentChunk) {
     if (key === "name") {
-      console.log(commentChunk["name"]);
       let nameEl = document.createElement("p"); //create p tag variable nameEl
       nameEl.innerText = `${commentChunk["name"]}`; //nameEl will show the info if key matches what's declared
       nameEl.className = "comments__name";
       commentsTop.appendChild(nameEl); //append to specified div
-      // console.log(commentsTop);
     }
     if (key === "date") {
-      console.log(commentChunk["date"]);
       let dateEl = document.createElement("p");
       dateEl.innerText = `${commentChunk["date"]}`;
       dateEl.className = "comments__date";
       commentsTop.appendChild(dateEl);
-      console.log(commentsTop);
     }
     if (key === "comment") {
-      console.log(commentChunk["comment"]);
       let commentEl = document.createElement("p");
       commentEl.innerText = `${commentChunk["comment"]}`;
       commentEl.className = "comments__comment";
@@ -94,7 +89,7 @@ form.addEventListener("submit", submitEvent => {
     date: formattedDate,
     comment: userComment
   };
-
+  form.reset();
   commentsArr.unshift(newComment); //push object with user info into beginning of array
   document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
   for (let object of commentsArr) displayComment(object); //invoke displaycomment function with new values pushed in

@@ -16,7 +16,7 @@
         </div>
         <nav class="header__nav">
             <p class="header__nav-item header__nav-item--active">Biography</p>
-            <p class="header__nav-item">Shows</p>
+            <p class="header__nav-item"><a href="./pages/shows.html">Shows</a></p>
         </nav>
     </header>
     <main>
@@ -99,22 +99,27 @@
         </section>
         <section class="comments">
             <h1 class="comments__header">Join the Conversation</h1>
-            
-            <div class="comments__right">
-                <div class="comments__left"></div>
+            <div class="comments__form-container">
+                <div class="comments__left--form">
+                    <div class="comments__left-circle">
+                        <img class="comments__pic" src="assets/images/new-comment-image.jpg">
+                    </div>
+                </div>
                 <form class="comments__form">
-<label class="comments__form-name">
-    <p class="comments__form-label">Name</p><input class="comments__new-name" type="text" name="name">
-</label>
-<label class="comments__form-comment">
-    <p class="comments__form-label">Comment</p><input class="comments__new-comment" type="textarea">
-</label>
-<label class="comments__form-submit">
-    <input class="comments__submit" type = "submit" value ="comment">
-</label>
+                    <label class="comments__form-name">
+                        <p class="comments__form-label">Name</p><input class="comments__new-name" type="text"
+                            name="name" placeholder="Mohan Muruge">
+                    </label>
+                    <label class="comments__form-comment">
+                        <p class="comments__form-label">Comment</p><input class="comments__new-comment" type="textarea"
+                            placeholder="Add a New Comment">
+                    </label>
+                    <label class="comments__form-submit">
+                        <input class="comments__submit" type="submit" value="comment">
+                    </label>
                 </form>
-                <div class="comments__displayed"></div>
             </div>
+            <div class="comments__displayed"></div>
         </section>
     </main>
     <footer class="footer">
