@@ -1,0 +1,29 @@
+@import "./partials/breakpoints";
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/margins";
+
+html,
+body {
+  margin: 0;
+  font-family: "avenir-next", sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow-x: hidden; /*to avoid horizontal scroll */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@import "./partials/header";
+@import "./partials/bio/hero";
+@import "./partials/about";
+@import "./partials/bio/photo-gallery";
+@import "./partials/bio/comments";
+@import "./partials/footer";

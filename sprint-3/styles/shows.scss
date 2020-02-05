@@ -1,0 +1,27 @@
+@import "../styles/partials/breakpoints";
+@import "../styles/partials/colors";
+@import "../styles/partials/fonts";
+@import "../styles/partials/margins";
+
+html,
+body {
+  margin: 0;
+  font-family: "avenir-next", sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow-x: hidden; /*to avoid horizontal scroll */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@import "../styles/partials/header";
+@import "../styles/partials/footer";
+@import "../styles/partials/shows/hero";
+@import "../styles/partials/shows/shows";

@@ -1,0 +1,132 @@
+.about {
+    margin: 0 $margin-small;
+    display: flex;
+    flex-direction: column;
+    color: $black;
+
+    &__title {
+        margin-top: 2rem; /* 32px */
+        @include mobile-header;
+    }
+
+    &__image-container {
+        margin: 1.5rem 0; /* 24px 0 */
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__bio {
+        margin: 2.5rem 0; /* 40px */
+    }
+
+    &__quote {
+        @include dt-subheader; /* used desktop font-size to better match mock-up */
+        margin-bottom: 2rem; /* 32px */
+    }
+
+    &__author {
+        @include mobile-subheader;
+    } 
+
+    &__names {
+        @include dt-subheader; /* used desktop font-size to better match mock-up */
+        margin-bottom: 1.5rem; /* 24px */
+    }
+
+    &__content {
+        @include mobile-paragraph-lists;
+    }
+
+    &__content--1 {
+        margin: 1.5rem 0; /* 24px */
+    }
+}
+
+@include medium {
+    .about {
+        margin: 0 $margin-medium;
+    
+    &__title {
+        @include dt-header-h1;
+    }
+
+    &__image-container {
+        min-height: 22.625rem; /* 362px - didn't set height so would scale nicely */
+        width: 100%;
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__quote,
+    &__names {
+        @include dt-header-h2;
+    }
+
+    &__author {
+        @include dt-subheader;
+    }
+
+    &__content-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        width: 48%; /* 348px -- not precise but wanted to use percentage here */
+        @include dt-paragraph;
+    }
+
+    &__content--1 {
+        margin: 0;
+    }
+    }
+}
+
+@include huge {
+    .about {
+        margin: 0 $margin-huge;
+
+    &__desktop-margin {
+        width: 81%;
+        align-self: center;
+    }
+    
+    &__title {
+        padding-top: 3rem; /* 48px */
+        align-self: flex-start;
+    }
+
+    &__image-container {
+        min-height: 28.125rem; /* 450px - didn't set height so it would scale better */
+        margin: 3rem 0; /* 48px 0*/
+    }
+
+    &__image {
+        width: 100%;
+    }
+    
+    &__quote {
+        margin-bottom: 2.5rem; /* 40px */
+    }
+
+    &__mid-quote {
+        display: inline-block;
+    }
+    
+    &__bio {
+        margin: 3.5rem 0 3rem 0; /* 56px 0 48px 0 */
+    }
+
+    &__names {
+        margin-bottom: 2rem; /* 32px */
+    }
+    }
+}
+

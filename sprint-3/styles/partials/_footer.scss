@@ -1,0 +1,149 @@
+.footer {
+  background-color: $black;
+  padding: 0 $margin-small;
+  display: flex;
+  flex-direction: column;
+  color: $white;
+  height: 43.75rem; /* 700px */
+  justify-content: space-evenly;
+
+  &__container-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20%;
+  }
+
+  &__title {
+    @include dt-header-h1; /* used bigger font size than specified on typography sheet, to match mock-up */
+  }
+
+  &__icon-container {
+    display: flex;
+    width: 46%;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: none;
+  }
+
+  &__contact-name {
+    @include mobile-subheader;
+    font-weight: bold;
+  }
+
+  &__contact-info {
+    @include mobile-paragraph-lists;
+    margin: 1rem 0; /* 16px 0 */
+  }
+
+  &__email-link {
+    color: $white;
+  }
+
+  &__all-rights-reserved {
+    display: block;
+  }
+}
+
+@include medium {
+  .footer {
+    padding: 0 $margin-medium;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 25rem; /* 400px 0 */
+
+    &__container-1 {
+      width: 100%;
+      flex-direction: row;
+      height: 30%;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &__title {
+      margin-right: 3rem; /* 48px */
+    }
+
+    &__icon-container {
+      width: 7.75rem; /* 124px */
+    }
+
+    &__logo {
+      display: inline-block;
+      margin-left: auto;
+    }
+
+    &__container-2 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__contact-container {
+      width: 35%; /* 250px */
+    }
+
+    &__contact-name {
+      @include dt-subheader;
+      font-weight: bold;
+    }
+
+    &__contact-info {
+      @include dt-lists;
+      margin: 1rem 0;
+
+      &--email {
+        margin-bottom: 0;
+      }
+    }
+
+    &__copyright {
+      margin-right: auto;
+    }
+
+    &__all-rights-reserved {
+      display: inline;
+    }
+  }
+}
+
+@include huge {
+  .footer {
+    height: fit-content;
+    padding: 0 $margin-huge;
+    justify-content: flex-start;
+
+    &__container-1 {
+      height: fit-content;
+      margin: 3rem 0 3.5rem 0; /* 48px 0 56px 0 */
+    }
+
+    &__logo {
+      width: 7.5rem; /* 120px */
+      height: 1.5rem; /* 24px */
+    }
+
+    &__logo-image {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__container-2 {
+      width: 75%;
+    }
+
+    &__contact-container {
+      margin-right: 1.562rem; /* 25px */
+    }
+
+    &__contact-name {
+      margin-bottom: 1.5rem; /* 24px */
+    }
+
+    &__copyright {
+      margin: 2.5rem 0; /* 40px 0 */
+      width: 100%;
+    }
+  }
+}

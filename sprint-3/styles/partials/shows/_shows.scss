@@ -1,0 +1,133 @@
+.shows {
+  margin: 0 $margin-small;
+  color: $black;
+
+  &__labels {
+    display: none;
+  }
+
+  &__title {
+    @include mobile-header;
+    color: $black;
+    margin: 32px 0 40px 0;
+  }
+
+  &__date,
+  &__venue,
+  &__location {
+    @include labels;
+    text-transform: uppercase;
+    color: $silver;
+    margin-top: 1.5rem;
+  }
+  &__date-content {
+    @include mobile-subheader;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  &__venue-content,
+  &__location-content {
+    @include mobile-paragraph-lists;
+    margin: 1rem 0 1.5rem 0;
+  }
+  &__button {
+    background-color: $black;
+    color: $white;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+  &__info {
+    border-bottom: 2px solid $mercury;
+  }
+  &__info-container {
+    margin-bottom: 3rem;
+  }
+}
+
+@include medium {
+  .shows {
+    margin: 0 $margin-medium;
+
+    &__title {
+      @include dt-header-h1;
+    }
+
+    &__labels {
+      display: flex;
+      width: 75%;
+      justify-content: space-evenly;
+      margin-bottom: 1rem;
+    }
+
+    &__label-container {
+      width: 33.33%;
+      display: flex;
+    }
+
+    &__label {
+      @include labels;
+      color: $silver;
+    }
+
+    &__info-container {
+      display: flex;
+      flex-direction: column;
+    }
+    &__info {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    &__el-container {
+      width: 25%;
+    }
+
+    &__date-content,
+    &__venue-content,
+    &__location-content {
+      width: 100%;
+      margin: 0;
+      @include dt-paragraph;
+    }
+    &__date,
+    &__venue,
+    &__location {
+      display: none;
+    }
+    &__button {
+      width: 25%;
+      margin: 0;
+    }
+  }
+}
+
+@include huge {
+  .shows {
+    margin: 0 $margin-huge;
+    display: flex;
+
+    &__title {
+      height: 100%;
+      width: 25%;
+      margin-top: 3rem;
+    }
+
+    &__labels {
+      margin-top: 3rem;
+    }
+
+    &__right {
+      width: 75%;
+    }
+
+    &__button {
+      width: 10rem;
+      height: 3rem;
+      margin-left: auto;
+    }
+  }
+}

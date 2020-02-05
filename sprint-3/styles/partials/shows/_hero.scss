@@ -1,0 +1,87 @@
+.hero {
+  &__image {
+    background: linear-gradient(
+        /*background overlay as specified in spec sheet */ rgba(50, 50, 50, 0.5),
+        rgba(50, 50, 50, 0.5)
+      ),
+      url("../assets/images/shows-hero-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 29.5rem; /* 472px */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 $margin-small;
+  }
+  &__title-small {
+    @include mobile-subheader;
+    color: $white;
+    margin: 4rem 0 1rem 0; /* 64px 0 16px 0 */
+  }
+  &__title {
+    color: $white;
+    @include dt-header-h1; //used desktop header to match mock-up
+    line-height: 48px;
+    margin-bottom: 2rem; /* 32px */ //specs say 64px but I halved that to match the mock-up
+  }
+  &__iframe {
+    height: 100px;
+    width: 100%;
+  }
+
+  &__iframe-content {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@include medium {
+  .hero {
+    &__image {
+      height: 41.875rem; /* 670px */
+      padding: 0 $margin-medium;
+    }
+
+    &__title-small {
+      margin: 6rem 0 1.5rem; /* 96px 0 24px */
+      @include dt-header-h2;
+    }
+    &__title {
+      @include dt-hero-header;
+      margin-bottom: 4rem; /* 64px */
+    }
+
+    &__title-break {
+      display: block;
+    }
+    &__iframe {
+      height: 166px;
+    }
+  }
+}
+
+@include huge {
+  .hero {
+    &__image {
+      height: 41.875rem; /* 670px */
+      padding: 0 $margin-huge;
+    }
+    &__title-small {
+      margin-top: 160px;
+    }
+    &__title-container {
+      display: flex;
+      width: 100%;
+      align-items: flex-end;
+    }
+    &__title {
+      margin: 0;
+      width: 60%;
+    }
+    &__iframe {
+      margin-left: 64px;
+      width: 40%;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@font-face {
+  font-family: avenir-next-bold;
+  src: url("../assets/global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf");
+}
+
+@font-face {
+  font-family: avenir-next-demi;
+  src: url("../assets/global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Demi.otf");
+}
+
+@font-face {
+  font-family: avenir-next;
+  src: url("../assets/global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf");
+}
+
+/* Mobile (small) fonts */
+
+@mixin mobile-header {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+  font-family: "avenir-next-bold";
+}
+
+@mixin mobile-subheader {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.375rem; /* 22px */
+  font-family: "avenir-next-demi";
+}
+
+@mixin mobile-paragraph-lists {
+  font-size: 0.812rem; /* 13px */
+  line-height: 1.125rem; /* 18px */
+}
+
+@mixin labels {
+  //same size for mobile and desktop
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.25rem; /* 20px */
+  font-family: "avenir-next-demi";
+}
+
+/* Desktop and tablet (medium and huge) fonts */
+
+@mixin dt-hero-header {
+  font-size: 3.75rem; /* 60px */
+  line-height: 4.25rem; /* 68px */
+  font-family: "avenir-next-bold";
+}
+
+@mixin dt-header-h1 {
+  font-size: 2.25rem; /* 36px */
+  line-height: 2.75rem; /* 44px */
+  font-family: "avenir-next-bold";
+}
+
+@mixin dt-header-h2 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+  font-family: "avenir-next-bold";
+}
+
+@mixin dt-subheader {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  font-family: "avenir-next-demi";
+}
+
+@mixin dt-paragraph {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.375rem; /* 22px */
+}
+
+@mixin dt-lists {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
