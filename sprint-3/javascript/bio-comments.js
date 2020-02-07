@@ -2,10 +2,12 @@
 let commentsArr = [];
 axios
   .get(
-    "https://project-1-api.herokuapp.com/comments?api_key=<5046ba2f-69fe-445d-841f-658f4203c99f>"
+    "https://project-1-api.herokuapp.com/comments?api_key=c509421f-1c2d-4ac6-8a23-d2d6ae0e225b"
   )
   .then(response => {
     commentsArr = response.data;
+    dateSort();
+    console.log(commentsArr.timestamp);
     renderComments(commentsArr);
   });
 // .catch(function(error) {
@@ -17,11 +19,20 @@ axios
 // });
 
 function renderComments(arr) {
-  console.log("testing array", arr);
   arr.forEach(commentObject => {
     displayComment(commentObject);
   });
 }
+
+function dateSort() {
+  commentsArr.sort(function(a, b) {
+    return b.timestamp - a.timestamp;
+  });
+}
+
+// function formatTime(time) {
+
+// }
 
 let infoContainer = document.querySelector(".comments__displayed"); //selecting div in html and assign variable named infoContainer
 
@@ -57,7 +68,7 @@ function displayComment(commentChunk) {
     }
     if (key === "timestamp") {
       let dateEl = document.createElement("p");
-      dateEl.innerText = `${commentChunk["date"]}`;
+      dateEl.innerText = `${commentChunk["timestamp"]}`;
       dateEl.className = "comments__date";
       commentsTop.appendChild(dateEl);
     }
@@ -83,33 +94,17 @@ form.addEventListener("submit", submitEvent => {
 
   axios
     .post(
-      "https://project-1-api.herokuapp.com/comments?api_key=<5046ba2f-69fe-445d-841f-658f4203c99f>",
+      "https://project-1-api.herokuapp.com/comments?api_key=c509421f-1c2d-4ac6-8a23-d2d6ae0e225b",
       {
         name: userName,
         comment: userComment
       }
     )
     .then(response => {
-      commentsArr = response.data;
-      renderNewComments(commentsArr);
+      commentsArr.push(response.data);
+      console.log(commentsArr);
+      document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
+      renderComments(commentsArr);
     });
-  // .catch(function(error) {
-  //   // handle error
-  //   console.log(error);
-  // })
-  // .then(function() {
-  //   // always executed
-  // });
-
-  function renderNewComments(arrTwo) {
-    console.log("testing array", arrTwo);
-    arrTwo.forEach(commentObject2 => {
-      rendernewComments(commentObject2);
-    });
-  }
-
   form.reset();
-  // commentsArr.unshift(newComment); //push object with user info into beginning of array
-  document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
-  // for (let object of commentsArr) displayComment(object); //invoke displaycomment function with new values pushed in
 });
