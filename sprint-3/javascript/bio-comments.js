@@ -7,7 +7,6 @@ axios
   .then(response => {
     commentsArr = response.data;
     dateSort();
-    console.log(commentsArr.timestamp);
     renderComments(commentsArr);
   });
 // .catch(function(error) {
@@ -30,14 +29,9 @@ function dateSort() {
   });
 }
 
-// function formatTime(time) {
-
-// }
-
 let infoContainer = document.querySelector(".comments__displayed"); //selecting div in html and assign variable named infoContainer
 
 function displayComment(commentChunk) {
-  console.log(commentChunk);
   //displaycomment function, param is comment chunk (object in array)
   let commentsObj = document.createElement("div");
   commentsObj.classList.add("comments__object");
@@ -68,7 +62,7 @@ function displayComment(commentChunk) {
     }
     if (key === "timestamp") {
       let dateEl = document.createElement("p");
-      dateEl.innerText = `${commentChunk["timestamp"]}`;
+      dateEl.innerText = formatDate(commentChunk.timestamp);
       dateEl.className = "comments__date";
       commentsTop.appendChild(dateEl);
     }
@@ -80,8 +74,6 @@ function displayComment(commentChunk) {
     }
   }
 }
-
-// for (let object of commentsArr) displayComment(object); //invoke the displayComment function for each object in array// shows comments before user click
 
 const form = document.querySelector(".comments__form"); //select form, assign variable
 
@@ -108,3 +100,12 @@ form.addEventListener("submit", submitEvent => {
     });
   form.reset();
 });
+
+let formatDate = function(timestamp) {
+  let date = new Date(timestamp);
+  const dateNum = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+  const formattedDate = `${month}/${dateNum}/${year}`;
+  return formattedDate;
+};
