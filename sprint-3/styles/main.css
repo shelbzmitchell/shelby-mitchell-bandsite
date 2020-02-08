@@ -597,6 +597,7 @@ body {
   border: 1px #E1E1E1 solid;
   background-color: #FAFAFA;
   outline: none;
+  padding-left: 1rem;
 }
 
 .comments__new-name:focus {
@@ -611,6 +612,8 @@ body {
   border: 1px #E1E1E1 solid;
   background-color: #FAFAFA;
   outline: none;
+  padding: 1rem;
+  font-family: avenir-next;
 }
 
 .comments__new-comment:focus {
@@ -638,6 +641,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border-top: 1px solid #E1E1E1;

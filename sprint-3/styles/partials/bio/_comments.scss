@@ -65,6 +65,7 @@
     border: 1px $mercury solid;
     background-color: $alabaster;
     outline: none;
+    padding-left: 1rem;
   }
 
   &__new-name:focus {
@@ -79,6 +80,8 @@
     border: 1px $mercury solid;
     background-color: $alabaster;
     outline: none;
+    padding: 1rem;
+    font-family: avenir-next;
   }
 
   &__new-comment:focus {
@@ -100,7 +103,7 @@
 
   &__object {
     display: flex;
-    width:
+    width: 100%;
     flex-wrap: wrap;
     border-top: 1px solid $mercury;
     border-bottom: 1px solid $mercury;

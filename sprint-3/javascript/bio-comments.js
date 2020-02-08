@@ -96,6 +96,7 @@ form.addEventListener("submit", submitEvent => {
       commentsArr.push(response.data);
       console.log(commentsArr);
       document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
+      dateSort();
       renderComments(commentsArr);
     })
     .catch(reject => {
