@@ -5,26 +5,26 @@ axios
     "https://project-1-api.herokuapp.com/comments?api_key=c509421f-1c2d-4ac6-8a23-d2d6ae0e225b"
   )
   .then(response => {
-    commentsArr = response.data;
-    dateSort();
-    renderComments(commentsArr);
+    //when we get the data....
+    commentsArr = response.data; //put it into variable
+    dateSort(); //call function that sorts comments by date
+    renderComments(commentsArr); //call renderCommets function
+  })
+  .catch(reject => {
+    console.log(reject);
   });
-// .catch(function(error) {
-//   // handle error
-//   console.log(error);
-// })
-// .then(function() {
-//   // always executed
-// });
 
 function renderComments(arr) {
+  //goes through each object and as it does so, calls the function displayComment
   arr.forEach(commentObject => {
     displayComment(commentObject);
   });
 }
 
 function dateSort() {
+  //function to sort by date
   commentsArr.sort(function(a, b) {
+    // using method that arranges numbers from largest to smallest
     return b.timestamp - a.timestamp;
   });
 }
@@ -62,7 +62,7 @@ function displayComment(commentChunk) {
     }
     if (key === "timestamp") {
       let dateEl = document.createElement("p");
-      dateEl.innerText = formatDate(commentChunk.timestamp);
+      dateEl.innerText = formatDate(commentChunk.timestamp); //calls date function
       dateEl.className = "comments__date";
       commentsTop.appendChild(dateEl);
     }
@@ -97,11 +97,16 @@ form.addEventListener("submit", submitEvent => {
       console.log(commentsArr);
       document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
       renderComments(commentsArr);
+    })
+    .catch(reject => {
+      console.log(reject);
     });
-  form.reset();
+
+  form.reset(); // clears input fields
 });
 
 let formatDate = function(timestamp) {
+  //function that takes timestamp and formats it to match mock-up
   let date = new Date(timestamp);
   const dateNum = date.getDate();
   const month = date.getMonth();

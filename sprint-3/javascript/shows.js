@@ -1,38 +1,13 @@
 //show info
-let shows = [
-  {
-    date: "Mon Dec 17 2018",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA"
-  },
-  {
-    date: "Tue July 18 2019",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA"
-  },
-  {
-    date: "Fri July 22 2019",
-    venue: "View Lounge",
-    location: "San Francisco, CA"
-  },
-  {
-    date: "Sat Aug 12 2019",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA"
-  },
-  {
-    date: "Fri Sep 05 2019",
-    venue: "Moscow Center",
-    location: "San Francisco, CA"
-  },
-  {
-    date: "Wed Aug 11 2019",
-    venue: "Pres Club",
-    location: "San Francisco, CA"
-  }
-];
-
+let shows = [];
 let infoContainer = document.querySelector(".shows__info-container"); //selecting div in html and creating variable named infoContainer
+axios
+  .get("https://project-1-api.herokuapp.com/showdates?api_key=bandsiteshows")
+  .then(response => {
+    shows = response.data;
+    console.log(response);
+    createShowSection(infoContainer, shows);
+  });
 
 function createShowSection(infoContainer, showInfo) {
   //declaring function named createShowSection, parameters are the div (var infoContainer and container for shows array (showInfo))
@@ -52,7 +27,6 @@ function createShowSection(infoContainer, showInfo) {
       //goes through each object key within each item
 
       if (key === "date") {
-        console.log(show["date"]);
         let dateEl = document.createElement("p");
         let dateEl2 = document.createElement("p");
         dateEl.innerText = `${key}`;
@@ -63,12 +37,11 @@ function createShowSection(infoContainer, showInfo) {
         showEl.appendChild(dateEl2);
       }
 
-      if (key === "venue") {
-        console.log(show["venue"]);
+      if (key === "place") {
         let venueEl = document.createElement("p");
         let venueEl2 = document.createElement("p");
         venueEl.innerText = `${key}`;
-        venueEl2.innerText = `${show["venue"]}`;
+        venueEl2.innerText = `${show["place"]}`;
         venueEl.className = "shows__venue";
         venueEl2.className = "shows__venue-content";
         showEl2.appendChild(venueEl);
@@ -76,7 +49,6 @@ function createShowSection(infoContainer, showInfo) {
       }
 
       if (key === "location") {
-        console.log(show["location"]);
         let locationEl = document.createElement("p");
         let locationEl2 = document.createElement("p");
         locationEl.innerText = `${key}`;
@@ -101,4 +73,4 @@ function createShowSection(infoContainer, showInfo) {
 }
 
 //invoke the createShowSection function
-createShowSection(infoContainer, shows); //arguments
+// createShowSection(infoContainer, shows); //arguments
