@@ -107,8 +107,6 @@ body {
 .header__nav-item--active {
   border-bottom: 0.187rem solid #ffffff;
   /* 3px */
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
 }
 
 @media only screen and (min-width: 768px) {
@@ -547,7 +545,7 @@ body {
   line-height: 2rem;
   /* 32px */
   font-family: "avenir-next-bold";
-  margin: 32px 0 40px 0;
+  margin: 2rem 0 2.5rem 0;
   width: 100%;
 }
 
@@ -571,7 +569,7 @@ body {
   width: 3rem;
   background-color: #E1E1E1;
   border-radius: 50%;
-  margin: 1rem 1rem 0 0;
+  margin: 1.25rem 1rem 0 0;
   overflow: hidden;
 }
 
@@ -598,6 +596,8 @@ body {
   background-color: #FAFAFA;
   outline: none;
   padding-left: 1rem;
+  font-family: avenir-next;
+  margin-bottom: 1.5rem;
 }
 
 .comments__new-name:focus {
@@ -657,12 +657,15 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
 
 .comments__bottom {
-  margin-left: 20%;
+  margin-left: 22%;
 }
 
 .comments__name {
@@ -701,11 +704,13 @@ body {
     font-family: "avenir-next-bold";
   }
   .comments__form-container {
-    margin: 0 100px;
+    margin: 0 6.25rem;
+    /* 100px */
     width: 100%;
   }
   .comments__displayed {
-    margin: 0 100px;
+    margin: 0 6.25rem;
+    /* 100px */
   }
   .comments__form {
     width: 100%;
@@ -729,6 +734,10 @@ body {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+  .comments__submit {
+    width: 10rem;
+    /* 160px */
+  }
   .comments__top {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -740,7 +749,7 @@ body {
     width: fit-content;
   }
   .comments__bottom {
-    margin-left: 64px;
+    margin-left: 4rem;
   }
   .comments__date {
     margin-left: 0.5rem;
@@ -778,7 +787,7 @@ body {
     margin-bottom: 3.5rem;
   }
   .comments__displayed {
-    margin: 0 100px;
+    margin: 0 6.25rem;
   }
   .comments__form {
     width: 43%;
@@ -811,7 +820,7 @@ body {
     margin: 0;
   }
   .comments__left-circle {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
   }
 }
 

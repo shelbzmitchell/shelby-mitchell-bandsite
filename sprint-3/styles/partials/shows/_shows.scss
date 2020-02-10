@@ -9,7 +9,7 @@
   &__title {
     @include mobile-header;
     color: $black;
-    margin: 32px 0 40px 0;
+    margin: 2rem 0 2.5rem 0;
   }
 
   &__date,
@@ -36,7 +36,7 @@
     border-radius: 4px;
     width: 100%;
     border: none;
-    height: 48px;
+    height: 3rem;
     margin-bottom: 1rem;
   }
   &__info {

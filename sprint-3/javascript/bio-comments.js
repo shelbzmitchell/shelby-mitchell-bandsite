@@ -81,26 +81,25 @@ form.addEventListener("submit", submitEvent => {
   //higher order function - when listener is activated, will execute function inside (inner function is parameter of this)
   submitEvent.preventDefault(); //prevent automatic page reload
 
-  let userName = document.querySelector(".comments__new-name").value; //assign user input to value
+  let userName = document.querySelector(".comments__new-name").value; //assign user input to variable
   let userComment = document.querySelector(".comments__new-comment").value;
 
   axios
     .post(
-      "https://project-1-api.herokuapp.com/comments?api_key=c509421f-1c2d-4ac6-8a23-d2d6ae0e225b",
+      "https://project-1-api.herokuapp.com/comments?api_key=c509421f-1c2d-4ac6-8a23-d2d6ae0e225b", //posts user info to api
       {
         name: userName,
         comment: userComment
       }
     )
     .then(response => {
-      commentsArr.push(response.data);
-      console.log(commentsArr);
+      commentsArr.push(response.data); //then push response into array
       document.querySelector(".comments__displayed").innerText = ""; //create empty text so it doesn't post array twice
-      dateSort();
-      renderComments(commentsArr);
+      dateSort(); //call date sort function
+      renderComments(commentsArr); //call rendercomments function to show new comment on site
     })
     .catch(reject => {
-      console.log(reject);
+      console.log(reject); //console log error if post doesn't work
     });
 
   form.reset(); // clears input fields

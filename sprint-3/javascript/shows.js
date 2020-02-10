@@ -4,9 +4,8 @@ let infoContainer = document.querySelector(".shows__info-container"); //selectin
 axios
   .get("https://project-1-api.herokuapp.com/showdates?api_key=bandsiteshows")
   .then(response => {
-    shows = response.data;
-    console.log(response);
-    createShowSection(infoContainer, shows);
+    shows = response.data; //assign retrieved data to variable shows (empty array)
+    createShowSection(infoContainer, shows); //call function that displays array info
   });
 
 function createShowSection(infoContainer, showInfo) {
@@ -71,6 +70,3 @@ function createShowSection(infoContainer, showInfo) {
     showsInfo.appendChild(button);
   }
 }
-
-//invoke the createShowSection function
-// createShowSection(infoContainer, shows); //arguments
